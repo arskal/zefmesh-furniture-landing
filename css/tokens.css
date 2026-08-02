@@ -1,0 +1,173 @@
+/* ====
+   tokens.css — the only file that declares raw values.
+   Colour, type scale, spacing, easing, elevation, z-index.
+   Every contrast pair below was measured, not assumed; ratios are noted.
+   ==== */
+
+:root {
+  /* ---- colour: grounds ---- */
+  --c-base:        #14110E;  /* deep near-black walnut */
+  --c-base-deep:   #0D0B09;  /* scrims, nav backdrop, lightbox */
+  --c-surface:     #1F1A16;  /* raised cards and panels */
+  --c-surface-2:   #2A231D;  /* nested panels, chip rest state */
+
+  /* ---- colour: ink ---- */
+  --c-ink:         #F2EDE6;  /* 16.15:1 on base */
+  --c-ink-muted:   #B9AE9E;  /*  8.61:1 on base */
+  --c-ink-faint:   #857C70;  /*  decorative only — never body text */
+
+  /* ---- colour: brass ---- */
+  --c-brass:       #C08A3E;  /*  6.22:1 on base — fills, rules, active */
+  --c-brass-lt:    #D9A24E;  /*  8.27:1 on base — brass as text */
+  --c-brass-deep:  #8A5F22;  /*  4.57:1 on light — brass on inverted bands */
+
+  /* ---- colour: showroom green ---- */
+  --c-green:       #5A6B5D;  /*  3.31:1 — FILL ONLY, never text on base */
+  --c-green-lt:    #8FA391;  /*  7.00:1 on base — green as text */
+  --c-green-deep:  #4A5A4D;  /*  5.97:1 on light */
+
+  /* ---- colour: inverted light band ---- */
+  --c-light:       #EDE7DE;
+  --c-light-ink:   #14110E;  /* 15.31:1 on light */
+  --c-light-muted: #4A443C;  /*  8.6:1  on light */
+
+  /* ---- hairlines: brass dimmed by the dark, not a fourth colour ---- */
+  --c-line:        rgba(192, 138, 62, 0.22);
+  --c-line-strong: rgba(192, 138, 62, 0.45);
+  --c-line-faint:  rgba(242, 237, 230, 0.10);
+  --c-line-light:  rgba(20, 17, 14, 0.16);
+
+  /* ---- focus ---- */
+  --c-focus:       #D9A24E;
+
+  /* ---- type: families ----
+     Ranges are disjoint per @font-face, so both scripts can share one stack;
+     order still matters for the system fallback. Reset per-language below. */
+  --ff-display: "Fraunces", "Noto Serif Ethiopic", Georgia, "Times New Roman", serif;
+  --ff-body:    "Public Sans", "Noto Sans Ethiopic", system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* Plex Mono is latin-only. The Ethiopic fallback is deliberate: mixed
+     strings such as the opening hours must never fall through to a
+     monospace face with no Ethiopic coverage and render as tofu. */
+  --ff-mono:    "IBM Plex Mono", "Noto Sans Ethiopic", ui-monospace, "SFMono-Regular", "Consolas", monospace;
+
+  /* ---- type: modular scale ----
+     Fluid between 380px and 1280px. Ratio ~1.2 -> ~1.28.
+     Nothing on this page may set a font-size that is not one of these. */
+  --step--2: clamp(0.6875rem, 0.672rem + 0.065vw, 0.75rem);
+  --step--1: clamp(0.8125rem, 0.795rem + 0.075vw, 0.875rem);
+  --step-0:  clamp(1rem,      0.972rem + 0.117vw, 1.0625rem);
+  --step-1:  clamp(1.2rem,    1.142rem + 0.244vw, 1.36rem);
+  --step-2:  clamp(1.44rem,   1.331rem + 0.458vw, 1.74rem);
+  --step-3:  clamp(1.728rem,  1.551rem + 0.746vw, 2.22rem);
+  --step-4:  clamp(2.074rem,  1.793rem + 1.183vw, 2.85rem);
+  --step-5:  clamp(2.488rem,  2.049rem + 1.851vw, 3.64rem);
+  --step-6:  clamp(2.986rem,  2.325rem + 2.783vw, 4.66rem);
+
+  /* ---- type: bilingual controls ----
+     Defaults here are the Latin values; the [lang] blocks below own them. */
+  --display-scale: 1;
+  --lh-display: 1.08;
+  --lh-heading: 1.2;
+  --lh-body:    1.45;
+  --ls-display: -0.022em;
+  --ls-heading: -0.012em;
+  --ls-eyebrow: 0.16em;
+  --tt-eyebrow: uppercase;
+
+  /* ---- type: weights ---- */
+  --fw-body:     400;
+  --fw-medium:   500;
+  --fw-semi:     600;
+  --fw-bold:     700;
+  --fw-display:  700;
+
+  /* ---- spacing: 4px base ---- */
+  --sp-1:  0.25rem;
+  --sp-2:  0.5rem;
+  --sp-3:  0.75rem;
+  --sp-4:  1rem;
+  --sp-5:  1.25rem;
+  --sp-6:  1.5rem;
+  --sp-8:  2rem;
+  --sp-10: 2.5rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-20: 5rem;
+
+  /* ---- layout ---- */
+  --container:      75rem;   /* 1200px */
+  --container-wide: 88rem;   /* 1408px */
+  --container-text: 46rem;
+  --gutter:    clamp(1.125rem, 0.55rem + 2.4vw, 3rem);
+  --section-y: clamp(3.5rem, 2.15rem + 5.7vw, 7.5rem);
+  --nav-h:     3.75rem;
+
+  /* ---- radii ---- */
+  --r-sm:   4px;
+  --r-md:   8px;
+  --r-lg:   14px;
+  --r-pill: 999px;
+
+  /* ---- elevation — warm, never neutral grey ---- */
+  --sh-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --sh-md: 0 8px 24px -12px rgba(0, 0, 0, 0.7);
+  --sh-lg: 0 24px 60px -24px rgba(0, 0, 0, 0.85);
+
+  /* ---- motion ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-io:  cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 160ms;
+  --dur-mid:  280ms;
+  --dur-slow: 500ms;
+  --reveal-y: 24px;
+
+  /* ---- z-index ---- */
+  --z-base:     1;
+  --z-sticky:   50;
+  --z-nav:      60;
+  --z-menu:     70;
+  --z-dock:     80;
+  --z-lightbox: 90;
+
+  /* ---- theming hooks ---- */
+  color-scheme: dark;
+  --safe-b: env(safe-area-inset-bottom, 0px);
+}
+
+/* ====
+   Bilingual type scoping.
+   Both blocks are written so an English fragment inside an Amharic page
+   (a phone number, the "EN" label) inherits the Latin values back without
+   any element-level override. Applied via <html lang> and lang="" on
+   always-Latin fragments.
+   ==== */
+
+[lang="en"] {
+  --ff-display: "Fraunces", "Noto Serif Ethiopic", Georgia, serif;
+  --ff-body:    "Public Sans", "Noto Sans Ethiopic", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --display-scale: 1;
+  --lh-display: 1.08;
+  --lh-heading: 1.2;
+  --lh-body:    1.45;
+  --ls-display: -0.022em;
+  --ls-heading: -0.012em;
+  --ls-eyebrow: 0.16em;
+  --tt-eyebrow: uppercase;
+}
+
+/* Ethiopic has no case, and letter-spacing breaks the rhythm of the
+   syllabary. Both are switched off here rather than per element.
+   Ethiopic glyphs also sit on taller vertical metrics, so line-heights rise
+   and display sizes step down 8% to land at equal optical weight. */
+[lang="am"] {
+  --ff-display: "Noto Serif Ethiopic", "Fraunces", Georgia, serif;
+  --ff-body:    "Noto Sans Ethiopic", "Public Sans", system-ui, sans-serif;
+  --display-scale: 0.92;
+  --lh-display: 1.34;
+  --lh-heading: 1.42;
+  --lh-body:    1.62;
+  --ls-display: 0;
+  --ls-heading: 0;
+  --ls-eyebrow: 0;
+  --tt-eyebrow: none;
+}

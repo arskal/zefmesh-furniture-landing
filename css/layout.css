@@ -1,0 +1,144 @@
+/* ====
+   layout.css — container, grid, section rhythm.
+
+   SINGLE SOURCE OF TRUTH for section padding. `--section-y` and the
+   `.section` padding rule below are declared here and nowhere else.
+   components.css and sections.css must never redeclare section padding;
+   that is the usual cause of sections that mysteriously collapse.
+   ==== */
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ---- section rhythm ---- */
+
+.section {
+  position: relative;
+  padding-block: var(--section-y);
+}
+
+.section--tight { padding-block: calc(var(--section-y) * 0.6); }
+
+/* Hairline between consecutive dark sections. Suppressed where a section
+   changes ground colour, since the colour change is the divider. */
+.section + .section:not(.on-light)::before {
+  content: "";
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline: var(--gutter);
+  height: 1px;
+  background: var(--c-line-faint);
+}
+
+.on-light + .section:not(.on-light)::before { display: none; }
+
+/* ---- section header: eyebrow + heading + lede, left-aligned ----
+   The narrow label column sits left on desktop and stacks above on mobile.
+   Nothing here is centred; that asymmetry is the main thing keeping the
+   page off the template look. */
+
+.section-head {
+  display: grid;
+  gap: var(--sp-4);
+  margin-block-end: var(--sp-10);
+}
+
+.section-head__rule {
+  display: block; /* it is a <span>; without this the rule collapses to 0x0 */
+  width: 3.5rem;
+  height: 2px;
+  margin-block-start: var(--sp-3);
+  background: var(--c-brass);
+  border-radius: var(--r-pill);
+}
+
+.section-head .lede { margin-block-start: var(--sp-1); }
+
+@media (min-width: 64rem) {
+  .section-head {
+    grid-template-columns: 14rem minmax(0, 1fr);
+    column-gap: var(--sp-12);
+    align-items: start;
+  }
+  .section-head__aside { grid-row: span 3; }
+}
+
+/* ---- generic grid ---- */
+
+.grid {
+  display: grid;
+  gap: var(--sp-6);
+}
+
+.grid--2 { grid-template-columns: 1fr; }
+
+@media (min-width: 48rem) {
+  .grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid { gap: var(--sp-8); }
+}
+
+/* ---- horizontal snap rail ----
+   Used by rooms, testimonials and the gallery on small screens. The edge
+   peek is deliberate: a card cut at the viewport edge is the only reliable
+   way to tell a phone user that something swipes. */
+
+.rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 78%;
+  gap: var(--sp-4);
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--gutter);
+  padding-inline: var(--gutter);
+  padding-block-end: var(--sp-4);
+  margin-inline: calc(var(--gutter) * -1);
+  scrollbar-width: none;
+}
+
+.rail::-webkit-scrollbar { display: none; }
+
+.rail > * { scroll-snap-align: start; }
+
+/* Trailing spacer so the last card can reach the start edge */
+.rail::after {
+  content: "";
+  inline-size: 1px;
+}
+
+@media (min-width: 48rem) {
+  .rail { grid-auto-columns: 46%; }
+}
+
+@media (min-width: 64rem) {
+  .rail--grid-lg {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    overflow: visible;
+    padding-inline: 0;
+    margin-inline: 0;
+    gap: var(--sp-6);
+  }
+  .rail--grid-lg::after { display: none; }
+}
+
+/* Image boxes hold their own aspect-ratio in the component that owns them
+   (.room__media, .source__media, .item__btn img), so the width/height
+   attributes on every <img> can stay intrinsic and still prevent shift. */
+
+/* ---- page shell ---- */
+
+main { display: block; }
+
+/* Keeps the fixed mobile dock from covering the end of the page */
+body { padding-block-end: 0; }
+
+@media (max-width: 47.99rem) {
+  body.has-dock { padding-block-end: calc(4rem + var(--safe-b)); }
+}

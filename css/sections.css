@@ -1,0 +1,828 @@
+/* ====
+   sections.css — per-section overrides only.
+   No section padding is declared here; that lives in layout.css.
+   ==== */
+
+/* ====
+   Hero
+   ==== */
+
+.hero {
+  position: relative;
+  display: grid;
+  align-items: end;
+  min-height: min(46rem, 92svh);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 62% 50%;
+}
+
+/* Warm scrim — the page is lit like the shop floor after dark, so the photo
+   sits under walnut rather than under neutral black. */
+/* Two layers, and they multiply — keep the combined alpha where the headline
+   sits near 0.85 and let the right-hand third of the photo come through at
+   roughly half strength, or the image disappears entirely. */
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(to top,
+      var(--c-base) 0%,
+      rgba(20, 17, 14, 0.90) 16%,
+      rgba(20, 17, 14, 0.55) 50%,
+      rgba(20, 17, 14, 0.35) 78%,
+      rgba(20, 17, 14, 0.60) 100%),
+    linear-gradient(to right,
+      rgba(20, 17, 14, 0.82) 0%,
+      rgba(20, 17, 14, 0.62) 38%,
+      rgba(20, 17, 14, 0.18) 72%,
+      rgba(20, 17, 14, 0) 100%);
+}
+
+.hero__inner {
+  display: grid;
+  gap: var(--sp-5);
+  padding-block: clamp(6rem, 4rem + 12vw, 9rem) var(--sp-8);
+  max-width: 46rem;
+}
+
+/* A photo is not a flat surface, so a measured contrast ratio against a token
+   means nothing here. The scrim does most of the work and this shadow covers
+   the rest; `--c-ink-muted` is deliberately not used over the image. */
+.hero__inner > * {
+  text-shadow: 0 1px 14px rgba(9, 7, 6, 0.55);
+}
+
+.hero__title { color: var(--c-ink); }
+
+.hero__title em {
+  font-style: normal;
+  color: var(--c-brass-lt);
+}
+
+.hero__sub {
+  font-size: var(--step-1);
+  color: var(--c-ink);
+  max-width: 40ch;
+}
+
+.hero__cta .btn { text-shadow: none; }
+
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  margin-block-start: var(--sp-2);
+}
+
+.hero__cta .btn { flex: 1 1 auto; min-width: max-content; }
+
+@media (min-width: 34rem) {
+  .hero__cta .btn { flex: 0 0 auto; }
+}
+
+/* ---- trust strip along the fold edge ---- */
+
+.hero__trust {
+  position: relative;
+  border-block-start: 1px solid var(--c-line);
+  background: color-mix(in srgb, var(--c-base) 88%, transparent);
+}
+
+.hero__trust ul {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero__trust li {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding-block: var(--sp-3);
+  font-size: var(--step--1);
+  color: var(--c-ink-muted);
+}
+
+.hero__trust li + li { border-block-start: 1px solid var(--c-line-faint); }
+
+.hero__trust svg {
+  flex: none;
+  color: var(--c-brass);
+}
+
+@media (min-width: 48rem) {
+  .hero__trust ul { grid-template-columns: repeat(3, 1fr); }
+  .hero__trust li { padding-block: var(--sp-4); }
+  .hero__trust li + li {
+    border-block-start: 0;
+    border-inline-start: 1px solid var(--c-line-faint);
+    padding-inline-start: var(--sp-5);
+  }
+}
+
+/* ---- hero load sequence: eyebrow, headline, subhead, buttons ---- */
+
+.hero__inner > * {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+  animation: hero-in 700ms var(--ease-out) forwards;
+}
+
+.hero__inner > :nth-child(1) { animation-delay: 80ms; }
+.hero__inner > :nth-child(2) { animation-delay: 200ms; }
+.hero__inner > :nth-child(3) { animation-delay: 340ms; }
+.hero__inner > :nth-child(4) { animation-delay: 460ms; }
+
+@keyframes hero-in {
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__inner > * { opacity: 1; transform: none; animation: none; }
+}
+
+/* ====
+   Stats band
+   ==== */
+
+.stats__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--c-line-faint);
+  border: 1px solid var(--c-line-faint);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.stat {
+  display: grid;
+  gap: var(--sp-1);
+  padding: var(--sp-6) var(--sp-4);
+  background: var(--c-base);
+}
+
+.stat__fig {
+  font-family: var(--ff-mono);
+  font-size: calc(var(--step-4) * var(--display-scale));
+  font-weight: var(--fw-medium);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  color: var(--c-brass-lt);
+  letter-spacing: -0.02em;
+}
+
+.stat__label {
+  font-size: var(--step--1);
+  color: var(--c-ink-muted);
+  margin: 0;
+}
+
+@media (min-width: 48rem) {
+  .stats__list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .stat { padding: var(--sp-8) var(--sp-6); }
+}
+
+/* ====
+   Shop by room
+   ==== */
+
+@media (min-width: 64rem) {
+  /* Editorial offset: cards 2 and 4 drop, so the row is not a flat strip */
+  .rooms .room:nth-child(even) { transform: translateY(var(--sp-10)); }
+}
+
+/* ====
+   Catalogue
+   ==== */
+
+.catalogue__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--sp-4);
+  margin-block-start: var(--sp-8);
+}
+
+@media (min-width: 48rem) {
+  .catalogue__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-6); }
+}
+
+@media (min-width: 64rem) {
+  .catalogue__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* ====
+   Local versus imported — first inverted band
+   ==== */
+
+.sourcing__split {
+  display: grid;
+  gap: var(--sp-8);
+}
+
+.source {
+  display: grid;
+  gap: var(--sp-5);
+  align-content: start;
+}
+
+.source__media {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--r-md);
+  background: rgba(20, 17, 14, 0.08);
+}
+
+.source__media img { width: 100%; height: 100%; object-fit: cover; }
+
+.source__title {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+.source__facts {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  border-block-start: 1px solid var(--c-line);
+}
+
+.source__facts > div {
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1fr);
+  gap: var(--sp-4);
+  padding-block: var(--sp-3);
+  border-block-end: 1px solid var(--c-line);
+}
+
+.source__facts dt {
+  font-size: var(--step--1);
+  font-weight: var(--fw-semi);
+  color: var(--c-brass-lt);
+}
+
+.source__facts dd {
+  margin: 0;
+  font-size: var(--step--1);
+  color: var(--c-ink-muted);
+}
+
+@media (min-width: 48rem) {
+  .sourcing__split {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--sp-12);
+  }
+  .sourcing__split > * + * {
+    padding-inline-start: var(--sp-12);
+    border-inline-start: 1px solid var(--c-line);
+    margin-inline-start: calc(var(--sp-12) * -1);
+  }
+}
+
+/* ====
+   How to buy — the only numbered markers on the page
+   ==== */
+
+.steps {
+  display: grid;
+  gap: var(--sp-6);
+  counter-reset: step;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: var(--sp-5);
+  align-items: start;
+  /* the <li> stretch to equal height in the 4-up row; without this the
+     leftover space inflates the marker row and the headings fall out of line */
+  align-content: start;
+}
+
+.step__num {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  font-family: var(--ff-mono);
+  font-size: var(--step-0);
+  font-weight: var(--fw-medium);
+  font-variant-numeric: tabular-nums;
+  color: var(--c-brass);
+  border: 1px solid var(--c-line-strong);
+  border-radius: 50%;
+  background: var(--c-base);
+  position: relative;
+  z-index: 1;
+}
+
+/* the brass spine linking the steps */
+.step:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  inset-block-start: 3rem;
+  inset-inline-start: 1.5rem;
+  width: 1px;
+  height: calc(100% + var(--sp-6) - 3rem);
+  background: linear-gradient(to bottom, var(--c-line-strong), var(--c-line));
+}
+
+.step__body { display: grid; gap: var(--sp-2); padding-block-start: var(--sp-1); }
+
+@media (min-width: 64rem) {
+  .steps { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--sp-8); }
+  .step { grid-template-columns: 1fr; gap: var(--sp-4); }
+  .step:not(:last-child)::before {
+    inset-block-start: 1.5rem;
+    inset-inline-start: 3rem;
+    width: calc(100% + var(--sp-8) - 3rem);
+    height: 1px;
+    background: linear-gradient(to right, var(--c-line-strong), var(--c-line));
+  }
+}
+
+/* ====
+   Delivery and installation
+   ==== */
+
+.delivery__cols {
+  display: grid;
+  gap: var(--sp-6);
+}
+
+.deliv-list {
+  display: grid;
+  gap: var(--sp-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.deliv-list li {
+  display: grid;
+  grid-template-columns: 1.25rem minmax(0, 1fr);
+  gap: var(--sp-3);
+  align-items: start;
+  color: var(--c-ink-muted);
+  font-size: var(--step--1);
+}
+
+.deliv-list svg { margin-block-start: 0.25em; }
+
+.deliv-list--yes svg { color: var(--c-green-lt); }
+.deliv-list--extra svg { color: var(--c-brass); }
+
+@media (min-width: 48rem) {
+  .delivery__cols { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-8); }
+}
+
+/* ====
+   Testimonials
+   ==== */
+
+.tstm__note {
+  padding: var(--sp-4) var(--sp-5);
+  border: 1px dashed var(--c-line-strong);
+  border-radius: var(--r-md);
+  background: var(--c-surface);
+  color: var(--c-ink-muted);
+  font-size: var(--step--1);
+  margin-block-end: var(--sp-6);
+}
+
+.tstm__rail { grid-auto-columns: 84%; }
+
+@media (min-width: 48rem) { .tstm__rail { grid-auto-columns: 44%; } }
+@media (min-width: 64rem) { .tstm__rail { grid-auto-columns: 32%; } }
+
+/* ====
+   Showroom gallery — offset grid
+   ==== */
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--sp-3);
+}
+
+.gallery__grid .item__btn img { aspect-ratio: 1 / 1; }
+
+@media (min-width: 48rem) {
+  .gallery__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--sp-4);
+  }
+  /* offset rhythm rather than a flat 4-up strip */
+  .gallery__grid > :nth-child(1) { grid-column: span 2; grid-row: span 2; }
+  .gallery__grid > :nth-child(1) .item__btn img { aspect-ratio: 1 / 1; }
+  .gallery__grid > :nth-child(6) { grid-column: span 2; }
+  .gallery__grid > :nth-child(6) .item__btn img { aspect-ratio: 2 / 1; }
+}
+
+/* ====
+   Branches — the plan-view showroom map
+   ==== */
+
+.branches { background: var(--c-base-deep); }
+
+.map {
+  position: relative;
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-lg);
+  background:
+    radial-gradient(120% 90% at 30% 10%, rgba(192, 138, 62, 0.07), transparent 60%),
+    var(--c-base);
+  overflow: hidden;
+}
+
+/* On a 380px phone a 1000-unit-wide viewBox would shrink the labels to
+   about 4px. The plan pans horizontally instead, at a size you can read. */
+.map__scroll {
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.map__scroll::-webkit-scrollbar { display: none; }
+
+.map__svg {
+  display: block;
+  width: 100%;
+  min-width: 40rem;
+  height: auto;
+}
+
+.map__hint { margin-inline-start: auto; }
+
+@media (min-width: 48rem) {
+  .map__svg { min-width: 0; }
+  /* scoped to beat `.map__legend span { display: inline-flex }` below */
+  .map__legend .map__hint { display: none; }
+}
+
+/* Paths ship fully drawn. JS only adds the draw-on, so with JS off the map
+   is complete rather than blank. */
+/* Hierarchy matters more than decoration here: main roads are the structure
+   and read brightest, secondary roads sit back, and the as-the-crow-flies
+   dashed line between the branches is the faintest thing on the drawing —
+   it is an annotation, not a route. */
+/* No `vector-effect: non-scaling-stroke` on these three. It makes the dash
+   pattern resolve in screen pixels while getTotalLength() returns user units,
+   so the draw-on dasharray comes out short and every road renders as
+   disconnected fragments. Letting the stroke scale is the correct trade. */
+.map__road,
+.map__ring,
+.map__link {
+  fill: none;
+  stroke: rgba(192, 138, 62, 0.62);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+}
+
+.map__ring {
+  stroke: rgba(192, 138, 62, 0.3);
+  stroke-width: 1.2;
+}
+
+.map__link {
+  stroke: rgba(192, 138, 62, 0.34);
+  stroke-dasharray: 4 5;
+  stroke-width: 1;
+}
+
+.map__block {
+  fill: rgba(242, 237, 230, 0.04);
+  stroke: rgba(242, 237, 230, 0.13);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+/* Sizes are SVG user units against a 1000-wide viewBox, chosen so the plan
+   stays legible at both the 640px panned width and the full desktop width. */
+.map__label {
+  font-family: var(--ff-mono);
+  font-size: 18px;
+  fill: var(--c-ink-muted);
+  letter-spacing: 0.06em;
+}
+
+.map__landmark {
+  font-family: "Noto Sans Ethiopic", var(--ff-body);
+  font-size: 20px;
+  fill: var(--c-ink-muted);
+  letter-spacing: 0;
+}
+
+.map__pin-label {
+  font-family: "Noto Serif Ethiopic", var(--ff-display);
+  font-size: 28px;
+  font-weight: 700;
+  fill: var(--c-ink);
+  letter-spacing: 0;
+}
+
+.map__node { fill: var(--c-brass); }
+
+.map__halo {
+  fill: none;
+  stroke: var(--c-brass);
+  stroke-width: 1;
+  opacity: 0.55;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: map-pulse 3.2s var(--ease-io) infinite;
+}
+
+.map__halo--b { animation-delay: 1.6s; }
+
+@keyframes map-pulse {
+  0%   { transform: scale(0.8); opacity: 0.55; }
+  70%  { transform: scale(2.1); opacity: 0; }
+  100% { transform: scale(2.1); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .map__halo { animation: none; opacity: 0.4; }
+}
+
+/* draw-on, added by ui.js only when the section enters the viewport */
+.map.is-drawing .map__road,
+.map.is-drawing .map__ring,
+.map.is-drawing .map__link {
+  stroke-dasharray: var(--len);
+  stroke-dashoffset: var(--len);
+  animation: map-draw 1400ms var(--ease-out) forwards;
+  animation-delay: var(--draw-delay, 0ms);
+}
+
+.map.is-drawing .map__link { animation-name: map-draw-dashed; }
+
+@keyframes map-draw { to { stroke-dashoffset: 0; } }
+@keyframes map-draw-dashed {
+  to { stroke-dashoffset: 0; stroke-dasharray: 4 5; }
+}
+
+.map__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  padding: var(--sp-3) var(--sp-5) var(--sp-5);
+  font-family: var(--ff-mono);
+  font-size: var(--step--2);
+  color: var(--c-ink-faint);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.map__legend span { display: inline-flex; align-items: center; gap: var(--sp-2); }
+.map__legend i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--c-brass);
+  display: inline-block;
+}
+.map__legend i.is-line {
+  width: 16px;
+  height: 1px;
+  border-radius: 0;
+  background: var(--c-line-strong);
+}
+
+/* ---- branch cards ---- */
+
+.branch-cards {
+  display: grid;
+  gap: var(--sp-5);
+  margin-block-start: var(--sp-8);
+}
+
+.branch {
+  display: grid;
+  gap: var(--sp-4);
+  align-content: start;
+  padding: var(--sp-6);
+  background: var(--c-surface);
+  border: 1px solid var(--c-line-faint);
+  border-radius: var(--r-lg);
+}
+
+.branch__head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+.branch__index {
+  font-family: var(--ff-mono);
+  font-size: var(--step--1);
+  color: var(--c-brass);
+}
+
+.branch__rows {
+  display: grid;
+  gap: 0;
+  margin: 0;
+}
+
+.branch__rows > div {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  gap: var(--sp-3);
+  padding-block: var(--sp-3);
+  border-block-start: 1px solid var(--c-line-faint);
+}
+
+.branch__rows dt {
+  font-size: var(--step--2);
+  font-weight: var(--fw-semi);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: var(--tt-eyebrow);
+  color: var(--c-ink-faint);
+  align-self: center;
+}
+
+.branch__rows dd {
+  margin: 0;
+  font-size: var(--step--1);
+  color: var(--c-ink);
+}
+
+.branch__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  margin-block-start: var(--sp-2);
+}
+
+.branch__actions .btn { flex: 1 1 auto; }
+
+/* No `.no-js .map__svg { display:none }` here. The plan is plain SVG markup
+   drawn at full length, so it is already the no-JavaScript fallback; hiding
+   it would leave no-JS visitors with nothing where the map should be. */
+
+@media (min-width: 48rem) {
+  .branch-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-6); }
+}
+
+/* ====
+   Final CTA band — second and last inversion
+   ==== */
+
+.final {
+  text-align: center;
+}
+
+.final__inner {
+  display: grid;
+  gap: var(--sp-6);
+  justify-items: center;
+}
+
+.final__title {
+  max-width: 20ch;
+}
+
+.final__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  justify-content: center;
+}
+
+.on-light .btn--primary {
+  background: var(--c-light-ink);
+  color: var(--c-light);
+}
+
+.on-light .btn--ghost {
+  border-color: rgba(20, 17, 14, 0.32);
+  color: var(--c-light-ink);
+}
+
+@media (hover: hover) {
+  .on-light .btn--primary:hover { background: #2A231D; }
+  .on-light .btn--ghost:hover { border-color: var(--c-brass-deep); color: var(--c-brass-deep); }
+}
+
+.final__map {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: 2.75rem;
+  font-size: var(--step--1);
+  font-weight: var(--fw-semi);
+  color: var(--c-brass-deep);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ====
+   Footer
+   ==== */
+
+.footer {
+  background: var(--c-base-deep);
+  border-block-start: 1px solid var(--c-line);
+  padding-block: var(--sp-12) var(--sp-8);
+}
+
+.footer__grid {
+  display: grid;
+  gap: var(--sp-8);
+}
+
+.footer__title {
+  font-size: var(--step--2);
+  font-weight: var(--fw-semi);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: var(--tt-eyebrow);
+  color: var(--c-ink-faint);
+  margin-block-end: var(--sp-3);
+}
+
+.footer__list {
+  display: grid;
+  gap: var(--sp-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--step--1);
+  color: var(--c-ink-muted);
+}
+
+.footer__list a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
+  text-decoration: none;
+  color: var(--c-ink-muted);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .footer__list a:hover { color: var(--c-brass-lt); }
+}
+
+.footer__social {
+  display: flex;
+  gap: var(--sp-2);
+}
+
+.footer__social a {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--c-line-faint);
+  border-radius: 50%;
+  color: var(--c-ink-muted);
+  transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .footer__social a:hover { color: var(--c-brass-lt); border-color: var(--c-brass); }
+}
+
+.footer__base {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3) var(--sp-6);
+  align-items: center;
+  justify-content: space-between;
+  margin-block-start: var(--sp-10);
+  padding-block-start: var(--sp-5);
+  border-block-start: 1px solid var(--c-line-faint);
+  font-size: var(--step--2);
+  color: var(--c-ink-faint);
+}
+
+@media (min-width: 48rem) {
+  .footer__grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: var(--sp-6); }
+}
