@@ -41,7 +41,7 @@
       navContact: "ቅርንጫፎች",
       navRooms: "በክፍል ይምረጡ",
       navDelivery: "ማድረስ",
-      navCall: "ደውሉ",
+      navCall: "ይደውሉ",
       navMenuOpen: "ዝርዝሩን ክፈት",
       navMenuClose: "ዝርዝሩን ዝጋ",
       langLabel: "ቋንቋ",
@@ -69,15 +69,15 @@
       /* ---- stats ---- */
       statsEyebrow: "በአጭሩ",
       statsTitle: "በአጭሩ ዘፍመሽ",
-      stat1: "ቅርንጫፎች በአዲስ አበባ",
-      stat2: "የምናስታጥቃቸው ክፍሎች",
-      stat3: "ዓመታት አዲስ አበባን ስናገለግል",
-      stat4Fig: "ከተማ አቀፍ",
-      stat4: "በአዲስ አበባ ውስጥ ማድረስ",
+      stat1: "ሁለት ቅርንጫፎች በአዲስ አበባ",
+      stat2: "የምናስውባቸው ክፍሎች",
+      stat3: "ለአመታት ውድ ደምበኞቻችንን አገልግለናል",
+      stat4Fig: "በመላው አዲስ አበባ",
+      stat4: "በመላው አዲስ አበባ ተደራሽነት ያለን",
 
       /* ---- shop by room ---- */
       roomsEyebrow: "በክፍል",
-      roomsTitle: "የትኛውን ክፍል ነው የሚያስታጥቁት?",
+      roomsTitle: "የትኛውን ክፍል ነው የሚያስውቡት?",
       roomsLede: "አራቱንም ክፍል በአንድ ሱቅ ውስጥ፣ በሁለቱም ቅርንጫፎች ያገኛሉ።",
       roomsSwipe: "ለማየት ወደ ጎን ያንሸራትቱ",
       catLiving: "ሳሎን",
@@ -94,23 +94,23 @@
       catTitle: "የቤት እቃዎቻችንን ይመልከቱ",
       catLede:
         "ዋጋ በስልክ ወይም በሱቅ ውስጥ በግልጽ ይነገርዎታል። ፎቶውን ነክተው ማስፋት ይችላሉ።",
-      filterLabel: "በክፍል ማጣሪያ",
+      filterLabel: "ለእያንዳንዱ የቤትዎ ክፍል",
       tabAll: "ሁሉም",
       originLocal: "ሀገር በቀል",
       originImported: "ከውጭ የገባ",
-      itemCta: "ስለ ዋጋ ይደውሉ",
+      itemCta: "ስለ ዋጋ ለማወቅ ይደውሉ",
       itemZoom: "ፎቶውን አስፋ",
       catEmpty: "በዚህ ክፍል ውስጥ ገና ምንም እቃ አልገባም።",
 
       item1: "ባለ ሶስት ሰው ሶፋ",
       item2: "የቆዳ ሶፋና የቡና ጠረጴዛ",
       item3: "ባለ ሰፊ ራስጌ አልጋ",
-      item4: "ሙሉ የመኝታ ቤት ስብስብ",
-      item5: "የመኝታ ቤት ስብስብ ከመቀመጫ ጋር",
-      item6: "አልጋና የጎን ጠረጴዛ",
+      item4: "መሉ በሙሉ የተሟላ የመኝታ ቤት እቃ",
+      item5: "አልጋ ከመቀመጫዉ ጋር",
+      item6: "አልጋና የራስጌ ጠረጴዛ",
       item7: "የስራ አስኪያጅ ጠረጴዛ",
-      item8: "የእንጨት ቢሮ ስብስብ",
-      item9: "ረጅም የስራ ጠረጴዛ",
+      item8: "ጥራት ካለው እንጨት የተሰራ የቢሮ እቃ",
+      item9: "ለስብሰባ የሚሆን ጠረጴዛ",
       item10: "ክብ የመመገቢያ ጠረጴዛ",
       item11: "የመመገቢያ ጠረጴዛ ከወንበሮች ጋር",
       item12: "ባለ ስድስት ሰው የመመገቢያ ስብስብ",
@@ -122,38 +122,38 @@
         "ሁለቱም በአንድ ሱቅ ውስጥ ጎን ለጎን ስለሚቀመጡ አነጻጽረው ማየት ይችላሉ።",
       srcMaterials: "እቃው",
       srcLead: "የሚፈጅበት ጊዜ",
-      srcSuits: "ለማን ይመቻል",
+      srcSuits: "ተመራጭነቱ",
       srcLocalTitle: "ሀገር በቀል",
       srcLocalBody:
-        "እዚሁ አዲስ አበባ ውስጥ የተሰራ። መጠኑን፣ ጨርቁንና ቀለሙን ማስተካከል ስለሚቻል ቤትዎ ላይ ልክ ይሆናል።",
+        "እዚሁ አዲስ አበባ ውስጥ የተሰራ። መጠኑን፣ ጨርቁንና ቀለሙን እንደፍላጎትዎ ማስተካከል ስለሚቻል ቤትዎ ላይ አንዳሰቡት ይሆናል።",
       srcLocalMaterials: "የሀገር ውስጥ እንጨት፣ ስፖንጅና ጨርቅ",
-      srcLocalLead: "በሱቅ ውስጥ ካለ ወዲያውኑ፤ በትዕዛዝ ከሆነ ጊዜ ይወስዳል",
+      srcLocalLead: "በሱቅ ውስጥ ካለ ወዲያውኑ፤ በትዕዛዝ ከሆነ በተወሰነ ጊዜ  ገደብ ውስጥ ይደርሳል ",
       srcLocalSuits: "መጠን ወይም ጨርቅ ማስተካከል ለሚፈልጉ",
       srcLocalAlt: "በእንጨት የተሰራ የቢሮ ጠረጴዛና ወንበሮች",
       srcImpTitle: "ከውጭ የገባ",
       srcImpBody:
         "ተመርጦ ከውጭ የገባ። በሱቅ ውስጥ ያለውን አይተው ወዲያውኑ መውሰድ ይችላሉ።",
-      srcImpMaterials: "የተሰራ እንጨት፣ ብረት፣ ቆዳና ቬልቬት",
+      srcImpMaterials: "በውጪ ሀገር የተሰራ እንጨት፣ ብረት፣ ቆዳና ቬልቬት",
       srcImpLead: "በሱቅ ውስጥ ካለው ውስጥ ወዲያውኑ",
       srcImpSuits: "በዚህ ሳምንት እቃ ለሚፈልጉ",
-      srcImpAlt: "ከውጭ የገቡ የእንጨት ጠረጴዛና መሳቢያዎች በሱቅ ውስጥ",
+      srcImpAlt: "ከውጭ የገቡ የእንጨት ጠረጴዛና መሳቢያዎች በሱቅ ውስጥ ያገኛሉ ",
 
       /* ---- why us ---- */
-      whyEyebrow: "ለምን እኛን",
-      whyChooseTitle: "ለምን ምርጫዎ እንደሚያደርጉን",
+      whyEyebrow: "ለምን ምርጫዎ እንደሚያደርጉን",
+      whyChooseTitle: "ለምን ታማኝ ደምበኛ እንደሚሆኑ",
       whyLede: "አራት ምክንያቶች — ሁሉም በሱቅ ውስጥ የሚረጋገጡ።",
       value1Title: "ሰፊ ምርጫ",
       value1Body:
-        "ሳሎን፣ መኝታ ቤት፣ ቢሮና ወጥ ቤት — አራቱም ክፍሎች በአንድ ጣራ ስር። ሀገር በቀልና ከውጭ የገባው ጎን ለጎን ስለሚቀመጥ አማራጮቹን አነጻጽረው ማየት ይችላሉ።",
+        "ሳሎን፣ መኝታ ቤት፣ ቢሮና ወጥ ቤት — አራቱም ክፍሎች በአንድ ጣራ ስር። ሀገር በቀልና ከውጭ የገቡ እቃዎች ጎን ለጎን ስለሚቀመጥ አማራጮቹን አነጻጽረው ማየት ይችላሉ።",
       value2Title: "ተመጣጣኝ ዋጋ",
       value2Body:
-        "ዋጋ በስልክ ወይም በሱቅ ውስጥ በግልጽ ይነገርዎታል። ከመወሰንዎ በፊት ዋጋውን አውቀው ሁለት ሶስት እቃ አነጻጽረው ማየት ይችላሉ።",
+        "ሱቅ በመምጣት በግልጽ ይነገርዎታል። ከመወሰንዎ በፊት ዋጋውን አውቀው ሁለት ሶስት እቃ አነጻጽረው ማየት ይችላሉ።",
       value3Title: "በጥራቱ የታወቀ",
       value3Body:
-        "እያንዳንዱን እቃ ከመግዛትዎ በፊት ተቀምጠውበት፣ ነክተውና መዝነው ማየት ይችላሉ። ፎቶ የማያሳየውን በአካል ያረጋግጣሉ።",
+        "እያንዳንዱን እቃ ከመግዛትዎ በፊት ተቀምጠውበት፣ እንዲሁም መዝነው ማየት ይችላሉ። ፎቶ የማያሳየውን በአካል ያረጋግጣሉ።",
       value4Title: "ሁለት ቅርንጫፍ",
       value4Body:
-        "ጃክሮስ/ገርጂ እና መገናኛ። ወደ አንዱ ቅርብ ከሆኑ ሳይርቁ መድረስ ይችላሉ፤ የፈለጉት እቃ በሌላኛው ካለ እናሳውቅዎታለን።",
+        "ጃክሮስ/ገርጂ እና መገናኛ። ወደ አንዱ ቅርብ ከሆኑ ሳይርቁ መድረስ ይችላሉ፤ የፈለጉት እቃ በየትኛው ቅርንጫፍ እንዳለ እናሳውቆታለን።",
 
       /* ---- how to buy ---- */
       howEyebrow: "እንዴት እንደሚገዙ",
@@ -161,23 +161,23 @@
       howLede: "አራት ደረጃ፣ ውስብስብ ነገር የለውም።",
       step1Title: "ሱቅ ይምጡ",
       step1Body:
-        "ወደ ጃክሮስ/ገርጂ ወይም ወደ መገናኛ ይምጡ። ቀድመው መደወል አያስፈልግም፤ ቢደውሉ ግን የፈለጉት እቃ መኖሩን አረጋግጠን እንነግርዎታለን።",
+        "ወደ ጃክሮስ/ገርጂ ወይም ወደ መገናኛ ይምጡ። አስቀድመው ቢደውሉ የፈለጉት እቃ መኖሩን አረጋግጠን እንነግርዎታለን።",
       step2Title: "ይምረጡ እና ያረጋግጡ",
       step2Body:
-        "እቃውን ተቀምጠውበት፣ መጠኑን ለክተው ይምረጡ። ዋጋውን፣ ቀለሙንና ጨርቁን አረጋግጠን እንመዘግባለን።",
-      step3Title: "ማድረሻ ያዘጋጁ",
+        "እቃውን ተቀምጠውበት፣ መጠኑን ለክተው ይምረጡ። ዋጋውን፣ ቀለሙንና ጨርቁን አረጋግጠን እናቀርብሎታለን።",
+      step3Title: "አድራሻዎን ያዘጋጁ",
       step3Body:
         "አድራሻዎን፣ ፎቁንና የሚመችዎትን ቀን እንይዛለን። የማድረሻ ክፍያ ካለ አስቀድመን እንነግርዎታለን።",
-      step4Title: "ተከላና ርክክብ",
+      step4Title: "እራሳችን ገጥመን እናስረክቦታለን",
       step4Body:
         "እቃው ደርሶ ይገጣጠማል። ከመሄዳችን በፊት ሁሉም ነገር በትክክል መሆኑን አብረን እናረጋግጣለን።",
 
       /* ---- delivery ---- */
-      delEyebrow: "ማድረስና ተከላ",
+      delEyebrow: "ማድረስና መገጣጠም",
       delTitle: "እቃው ወደ ቤትዎ እንዴት እንደሚደርስ",
       delCoverage: "የአገልግሎት ክልል",
       delCoverageBody:
-        "በአዲስ አበባ ውስጥ ወዳሉ አካባቢዎች እናደርሳለን። ከከተማ ውጭ ስለማድረስ ሲደውሉ እንነጋገራለን።",
+        "በአዲስ አበባ ውስጥ ወዳሉ አካባቢዎች በነፃ እናደርሳለን። ከከተማ ውጭ ስለማድረስ ሲደውሉ እንነጋገራለን።",
       delIncluded: "የሚካተት",
       delIncluded1: "ከሱቅ እስከ አድራሻዎ ማጓጓዝ",
       delIncluded2: "ወደ ቤት ማስገባትና ማስቀመጥ",
@@ -196,11 +196,14 @@
       tstmNote:
         "ማሳሰቢያ ለባለቤቱ — ከዚህ በታች ያሉት ሶስቱም አስተያየቶች ናሙና ናቸው። ከመለቀቁ በፊት በእውነተኛ የደንበኛ አስተያየትና ስም ይተኩ።",
       tstmFlag: "ናሙና",
-      tstmBy: "የደንበኛ ስም",
+     tstmBy1: "Frezer Tesfaye",
+      tstmBy2: "Yonas Andualem",
+      tstmBy3: "Kibrom Hadush",
       tstmSrc: "ምንጭ ይገባል",
-      tstm1: "እዚህ ላይ ስለ ምርጫው ስፋት የተሰጠ የደንበኛ አስተያየት ይገባል።",
-      tstm2: "እዚህ ላይ ስለ ዋጋና ስለ አገልግሎት የተሰጠ የደንበኛ አስተያየት ይገባል።",
-      tstm3: "እዚህ ላይ ስለ ማድረስና ስለ ተከላ የተሰጠ የደንበኛ አስተያየት ይገባል።",
+    
+      tstm1: "ጥራት ያለው የፈርኒቸር እቃዎች ለመግዛት ዘፍመሽ ፈርኒቸርን ይጎብኙ።",
+      tstm2: "ከድሮ ጀምሮ የነበረ፤ ሀቀኛ",
+      tstm3: "ዘፍመሽ ፈርኒቸር በገርጂ  ጃክሮስ የሚገኝ ሲሆን፣ ከዘፍመሽ ሞል ጋር አያምታቱት፣ መደብሩ በጣም ትልቅ እና ጥሩ የሶፋ እና የአልጋ እንዲሁ ሌሎች ሀገር በቀልና የውጪ ሀገር እቃዎች በተመጣጣኝ ዋጋ። ቦታው ትንሽ ቢርቅም።",
       tstmDots: "የአስተያየት ማውጫ",
 
       /* ---- gallery ---- */
@@ -230,11 +233,10 @@
       faqA6:
         "ከሰኞ – ቅዳሜ ከጠዋቱ 2:00 – ከቀኑ 11:00። እሁድ ዝግ ነን።",
       faqQ7: "ሀገር በቀሉ የቱ ነው፣ ከውጭ የገባው የቱ?",
-      faqA7:
-        "እያንዳንዱ እቃ በሱቅ ውስጥ ምልክት አለው። በዚህ ገጽ ላይ ደግሞ በካታሎጉ ውስጥ «ሀገር በቀል» ወይም «ከውጭ የገባ» ተብሎ ተለይቷል።",
+      
       faqQ8: "እቃ ማስያዝ ይቻላል?",
       faqA8:
-        "ይደውሉልን — የፈለጉት እቃ መኖሩን አረጋግጠን ስለ ማስያዝ እንነጋገራለን።",
+        "ይደውሉልን — የፈለጉት እቃ መኖሩን አረጋግጠን እናሳውቆታለን።",
 
       /* ---- branches ---- */
       brEyebrow: "ቅርንጫፎቻችን",
@@ -261,7 +263,7 @@
       gerjiTitle: "ጃክሮስ / ገርጂ",
       gerjiAddress: "ጃክሮስ መኖሪያ አቅራቢያ፣ አዲስ አበባ",
       gerjiLandmark: "የቀድሞ አምባሳደር አልባሳት ፋብሪካ ጎን",
-      gerjiFloor: "የመሬት ወለል",
+      gerjiFloor: "ግራውንድ ላይ",
       megenagnaTitle: "መገናኛ",
       megenagnaAddress: "መገናኛ፣ ዘፍመሽ ግራንድ ሞል፣ አዲስ አበባ",
       megenagnaLandmark: "ዘፍመሽ ግራንድ ሞል",
@@ -280,7 +282,7 @@
       footerTagline: "ጥራት ያለው የቤት እቃ ለሁሉም የአዲስ አበባ ቤት",
       footerBranches: "ቅርንጫፎቻችን",
       footerHours: "የስራ ሰዓት",
-      footerQuickLinks: "አገናኞች",
+      footerQuickLinks: "ሊንኮች",
       footerSocial: "ማህበራዊ ገጾች",
       footerSocialNote: "ገጾቻችን በቅርቡ ይገባሉ",
       footerJacros: "ጃክሮስ / ገርጂ — 011 668 6979",
@@ -290,7 +292,7 @@
 
       /* ---- utilities ---- */
       toTop: "ወደ ላይ ተመለስ",
-      dockCall: "ደውሉ",
+      dockCall: "ይደውሉ",
       dockDirections: "አቅጣጫ",
       fabCall: "ዘፍመሽ ፈርኒቸርን ይደውሉ",
       lbClose: "ዝጋ",
@@ -440,7 +442,7 @@
       step2Title: "Choose and confirm",
       step2Body:
         "Sit on it, measure it, decide. We confirm the price, the colour and the fabric, and write the order down with you.",
-      step3Title: "Arrange delivery",
+      step33Title: "Arrange your address",
       step3Body:
         "We take your address, the floor you are on and a day that suits you. Any delivery charge is agreed before you leave.",
       step4Title: "Installation and handover",
@@ -471,11 +473,13 @@
       tstmNote:
         "Note to the owner — all three quotes below are samples. Replace them with real customer reviews and real names before this page goes live.",
       tstmFlag: "SAMPLE",
-      tstmBy: "Customer name",
+      tstmBy1: "Frezer Tesfaye",
+      tstmBy2: "Yonas Andualem",
+      tstmBy3: "Kibrom Hadush",
       tstmSrc: "Source to be added",
-      tstm1: "A customer comment about the range of choice goes here.",
-      tstm2: "A customer comment about price and service goes here.",
-      tstm3: "A customer comment about delivery and installation goes here.",
+      tstm1: "If you want to buy  good quality furniture, you have to visit Zefmesh furniture.",
+      tstm2: "old n true",
+      tstm3: "Zefmesh Furniture is located around Gerji Jakros Don't confuse it with Zefmesh Mall Which is located in Meganaga,the store is very big and has a very good collection of sofas, beds, and other home mede and imported furnitures at a relatively good price. Not that easy to get there though.",
       tstmDots: "Choose a testimonial",
 
       /* ---- gallery ---- */
@@ -505,8 +509,7 @@
       faqA6:
         "Monday to Saturday, ከሰኞ – ቅዳሜ ከጠዋቱ 2:00 – ከቀኑ 11:00 (8:00 AM – 5:00 PM). Closed Sunday.",
       faqQ7: "How do I tell local from imported?",
-      faqA7:
-        "Every piece is marked on the floor. On this page, the catalogue tags each item as either locally made or imported.",
+    
       faqQ8: "Can I reserve a piece?",
       faqA8:
         "Call us — we will check the piece is available and talk through holding it for you.",

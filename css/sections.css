@@ -447,7 +447,7 @@
    Branches — the plan-view showroom map
    ==== */
 
-.branches { background: var(--c-base-deep); }
+.branches { background: var(--c-surface); }
 
 .map {
   position: relative;
@@ -748,7 +748,7 @@
    ==== */
 
 .footer {
-  background: var(--c-base-deep);
+  background: var(--c-surface);
   border-block-start: 1px solid var(--c-line);
   padding-block: var(--sp-12) var(--sp-8);
 }
