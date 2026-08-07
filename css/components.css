@@ -551,10 +551,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--sp-3);
-  /* FLIP filter transition is driven from gallery.js */
-  transition:
-    opacity var(--dur-mid) var(--ease-out),
-    transform var(--dur-mid) var(--ease-out);
+  height: 100%; /* ensures equal height across grid items */
 }
 
 .item[hidden] { display: none; }
@@ -565,18 +562,18 @@
   position: relative;
   display: block;
   width: 100%;
-  padding: 0;
+  aspect-ratio: 4 / 3; /* Lock container to 4:3 */
   overflow: hidden;
   border-radius: var(--r-md);
   background: var(--c-surface-2);
   cursor: zoom-in;
 }
 
+/* Crop all catalogue images to a uniform 4:3 landscape frame */
 .item__btn img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  transition: transform 500ms var(--ease-out);
+  width: 100% !important;
+  height: 220px !important;
+  object-fit: cover !important;
 }
 
 .item__zoom {
@@ -1213,4 +1210,108 @@ dialog::backdrop { background: rgba(9, 7, 6, 0.78); }
 body.is-locked {
   overflow: hidden;
   touch-action: none;
+}
+/* --- FORCE SHOW CATALOGUE CAPTIONS & DETAILS --- */
+.catalogue__grid .item {
+  display: flex !important;
+  flex-direction: column !important;
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+}
+
+.catalogue__grid .item__btn {
+  width: 100% !important;
+  height: 180px !important; /* Fixed pixel height so the photo can NEVER grow too big */
+  aspect-ratio: unset !important;
+  overflow: hidden !important;
+  flex-shrink: 0 !important;
+}
+
+.catalogue__grid .item__btn picture,
+.catalogue__grid .item__btn img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+.catalogue__grid .item__name,
+.catalogue__grid .item__meta,
+.catalogue__grid .item__cta {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+/* --- FIX LIGHTBOX POPUP CAPTIONS --- */
+.lightbox__inner {
+  height: 100vh !important;
+  max-height: 100vh !important;
+  overflow: hidden !important;
+}
+
+.lightbox__stage {
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+
+.lightbox__img {
+  max-height: 68vh !important; /* Caps image height so caption always fits underneath */
+  object-fit: contain !important;
+}
+
+.lightbox__caption {
+  min-height: 3.5rem !important;
+  flex-shrink: 0 !important;
+}
+/* Review origin links */
+.quote__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  color: var(--c-brass-lt);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-size: var(--step--1);
+}
+
+.quote__src {
+  font-size: var(--step--2);
+  color: var(--c-ink-muted);
+  text-decoration: none;
+}
+/* --- MOBILE SECTION SPACING FIX --- */
+/* --- MODERATE MOBILE SECTION SPACING --- */
+@media (max-width: 47.99rem) {
+  .section {
+    padding-block: 2.5rem !important; /* Balanced vertical padding */
+  }
+
+  .section + .section {
+    padding-block-start: 1rem !important; /* Prevents double-padding build-up */
+  }
+
+  .section-head {
+    margin-block-end: 2rem !important; /* Natural gap below section titles */
+  }
+}
+/* Layout for separate map links */
+.final__maps {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  margin-block-start: var(--sp-2);
+}
+
+.final__maps-sep {
+  color: var(--c-brass-deep);
+  font-weight: bold;
+}
+/* Subtle styling for background reference landmark labels */
+.map__ref-label {
+  font-family: "Noto Sans Ethiopic", var(--ff-body);
+  font-size: 12px;
+  fill: var(--c-ink-faint); /* Muted gray text */
+  letter-spacing: 0;
 }

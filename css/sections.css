@@ -429,7 +429,7 @@
   gap: var(--sp-3);
 }
 
-.gallery__grid .item__btn img { aspect-ratio: 1 / 1; }
+.gallery__grid .item__btn { aspect-ratio: 1 / 1; }
 
 @media (min-width: 48rem) {
   .gallery__grid {
@@ -825,4 +825,20 @@
 
 @media (min-width: 48rem) {
   .footer__grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: var(--sp-6); }
+}
+/* --- FIX CATALOGUE CARD OVERFLOW --- */
+.item__btn {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  aspect-ratio: 4 / 3 !important;
+  overflow: hidden !important;
+}
+
+.item__btn picture,
+.item__btn img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
 }

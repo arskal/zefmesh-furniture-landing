@@ -110,7 +110,7 @@
       item6: "አልጋና የራስጌ ጠረጴዛ",
       item7: "የስራ አስኪያጅ ጠረጴዛ",
       item8: "ጥራት ካለው እንጨት የተሰራ የቢሮ እቃ",
-      item9: "ለስብሰባ የሚሆን ጠረጴዛ",
+      item9: "ምቹ የስራ ዴስክ በቤትዎ",
       item10: "ክብ የመመገቢያ ጠረጴዛ",
       item11: "የመመገቢያ ጠረጴዛ ከወንበሮች ጋር",
       item12: "ባለ ስድስት ሰው የመመገቢያ ስብስብ",
@@ -150,14 +150,14 @@
         "ሱቅ በመምጣት በግልጽ ይነገርዎታል። ከመወሰንዎ በፊት ዋጋውን አውቀው ሁለት ሶስት እቃ አነጻጽረው ማየት ይችላሉ።",
       value3Title: "በጥራቱ የታወቀ",
       value3Body:
-        "እያንዳንዱን እቃ ከመግዛትዎ በፊት ተቀምጠውበት፣ እንዲሁም መዝነው ማየት ይችላሉ። ፎቶ የማያሳየውን በአካል ያረጋግጣሉ።",
+        "እያንዳንዱን እቃ ከመግዛትዎ በፊት ተቀምጠውበት፣ እንዲሁም አገላብጠው ማየት ይችላሉ። ፎቶ የማያሳየውን በአካል ያረጋግጣሉ።",
       value4Title: "ሁለት ቅርንጫፍ",
       value4Body:
-        "ጃክሮስ/ገርጂ እና መገናኛ። ወደ አንዱ ቅርብ ከሆኑ ሳይርቁ መድረስ ይችላሉ፤ የፈለጉት እቃ በየትኛው ቅርንጫፍ እንዳለ እናሳውቆታለን።",
+        "ጃክሮስ/ገርጂ እና መገናኛ። የሚቀርቦትን ይምረጡ-ብዙ ሳይርቁ፤ የፈለጉት እቃ በየትኛው ቅርንጫፍ እንዳለ እናሳውቆታለን።",
 
       /* ---- how to buy ---- */
       howEyebrow: "እንዴት እንደሚገዙ",
-      howTitle: "ከበሩ እስከ ሳሎንዎ",
+      howTitle: "ከበሩ ወደ ሳሎንዎ",
       howLede: "አራት ደረጃ፣ ውስብስብ ነገር የለውም።",
       step1Title: "ሱቅ ይምጡ",
       step1Body:
@@ -216,24 +216,24 @@
       faqTitle: "በተደጋጋሚ የሚጠየቁ",
       faqQ1: "ማድረስ አገልግሎት አላችሁ?",
       faqA1:
-        "አዎ፣ በአዲስ አበባ ውስጥ እናደርሳለን። ዋጋውና ጊዜው በአካባቢውና በእቃው መጠን ይወሰናል — ሲደውሉ በግልጽ እንነግርዎታለን።",
+        "አዎ፣ በመላው አዲስ አበባ ውስጥ ያለምንም ተጨማሪ ክፍያ እናደርሳለን",
       faqQ2: "ዋስትና አላችሁ?",
       faqA2:
-        "ዋስትናው በእቃውና በአምራቹ ይለያያል። ከመግዛትዎ በፊት የመረጡት እቃ ምን ዓይነት ዋስትና እንዳለው በሱቅ ውስጥ እናብራራልዎታለን።",
+        "የሀገር በቀል መርቶቻችን ላይ ዋስትና ያለን ሲሆን፤ ከውጭ ሀገር በገቡት እቃዎቻችን ላይ ግን የለንም",
       faqQ3: "በትዕዛዝ ማሰራት ይቻላል?",
       faqA3:
         "ሀገር በቀል እቃዎችን በመጠን፣ በጨርቅና በቀለም ማስተካከል ይቻላል። ከውጭ የገቡት ግን እንዳሉ ነው የሚሸጡት።",
       faqQ4: "የክፍያ አማራጮች ምንድን ናቸው?",
       faqA4:
-        "ያሉትን የክፍያ አማራጮች ሲደውሉ ወይም ሱቅ ሲመጡ እናረጋግጥልዎታለን።",
+        "በጥሬ ብር እንዲሁም በተለያዩ የሞባይል ባንኪንግ አማራጮች መክፈል ይችላሉ",
       faqQ5: "የመኪና ማቆሚያ አለ?",
       faqA5:
         "በሁለቱም ቅርንጫፎች መኪና ማቆም ይችላሉ። መገናኛ ያለው ቅርንጫፍ በዘፍመሽ ግራንድ ሞል 6ኛ ፎቅ ላይ ስለሆነ የሞሉን ማቆሚያ ይጠቀማሉ።",
       faqQ6: "መቼ ክፍት ናችሁ?",
-      faqA6:
-        "ከሰኞ – ቅዳሜ ከጠዋቱ 2:00 – ከቀኑ 11:00። እሁድ ዝግ ነን።",
-      faqQ7: "ሀገር በቀሉ የቱ ነው፣ ከውጭ የገባው የቱ?",
       
+        faqA6:"ከሰኞ – ቅዳሜ ከጠዋቱ 2:00 – ከቀኑ 11:00። እሁድ ዝግ ነን።",
+      faqQ7: "ሀገር በቀሉ የቱ ነው፣ ከውጭ የገባው የቱ?",
+      faqA7: "እያንዳንዱ እቃ በሱቅ ውስጥ ምልክት አለው",
       faqQ8: "እቃ ማስያዝ ይቻላል?",
       faqA8:
         "ይደውሉልን — የፈለጉት እቃ መኖሩን አረጋግጠን እናሳውቆታለን።",
@@ -276,7 +276,8 @@
         "ሁለቱም ቅርንጫፎች ከሰኞ እስከ ቅዳሜ ክፍት ናቸው። ደውለው ይጠይቁ ወይም ብቅ ይበሉ።",
       finalCall1: "ጃክሮስ / ገርጂ ይደውሉ",
       finalCall2: "መገናኛ ይደውሉ",
-      finalMap: "ሁለቱንም ቅርንጫፎች በካርታ ይመልከቱ",
+      finalMap1: "ጃክሮስ / ገርጂ በካርታ ይመልከቱ",
+finalMap2: "መገናኛ በካርታ ይመልከቱ",
 
       /* ---- footer ---- */
       footerTagline: "ጥራት ያለው የቤት እቃ ለሁሉም የአዲስ አበባ ቤት",
@@ -298,7 +299,12 @@
       lbClose: "ዝጋ",
       lbPrev: "ቀዳሚ ፎቶ",
       lbNext: "ቀጣይ ፎቶ",
-      lbLabel: "የፎቶ መመልከቻ"
+      lbLabel: "የፎቶ መመልከቻ",
+      refMegenagnaSq: "መገናኛ አደባባይ",
+refLrt: "የቀሊል ባቡር ጣቢያ",
+refGerjiTaxi: "ገርጂ ታክሲ ተራ",
+refJacrosRes: "ጃክሮስ መኖሪያ",
+tstmSrc: "የጉግል ካርታ አስተያየት",
     },
 
     en: {
@@ -430,7 +436,7 @@
         "Sit on it, feel the fabric, lift the drawer. Every piece can be checked in person before you buy it — which is the part a photo cannot do for you.",
       value4Title: "Two branches",
       value4Body:
-        "Jacros/Gerji and Megenagna. Whichever is nearer, it is a short trip — and if the piece you want is at the other one, we will tell you.",
+        "Jacros/Gerji and Megenagna.Choose Whichever is nearer, it is a short trip — and if the piece you want is at the other one, we will tell you.",
 
       /* ---- how to buy ---- */
       howEyebrow: "How to buy",
@@ -492,10 +498,10 @@
       faqTitle: "Asked often",
       faqQ1: "Do you deliver?",
       faqA1:
-        "Yes, anywhere within Addis Ababa. The cost and the timing depend on the area and the size of the order — we will tell you plainly when you call.",
+        "Yes,we deliver anywhere within Addis Ababa, without any additional payment",
       faqQ2: "Is there a warranty?",
       faqA2:
-        "It varies by piece and by maker. Before you buy, we go through what the warranty covers on the specific item you have chosen.",
+        "Locally made pieces have a warranty ; imported pieces are sold as they come.",
       faqQ3: "Can I have something made to size?",
       faqA3:
         "Locally made pieces can be adjusted in size, fabric and colour. Imported pieces are sold as they come.",
@@ -552,7 +558,8 @@
         "Both showrooms are open Monday to Saturday. Call ahead or simply walk in.",
       finalCall1: "Call Jacros / Gerji",
       finalCall2: "Call Megenagna",
-      finalMap: "See both branches on the map",
+      finalMap1: "Jacros / Gerji on Maps",
+finalMap2: "Megenagna on Maps",
 
       /* ---- footer ---- */
       footerTagline: "Quality furniture for every home in Addis Ababa",
@@ -574,7 +581,12 @@
       lbClose: "Close",
       lbPrev: "Previous photo",
       lbNext: "Next photo",
-      lbLabel: "Photo viewer"
+      lbLabel: "Photo viewer",
+      refMegenagnaSq: "Megenagna Square",
+refLrt: "LRT Station",
+refGerjiTaxi: "Gerji Taxi Station",
+refJacrosRes: "Jacros Residential",
+tstmSrc: "Google Maps Review",
     }
   };
 
